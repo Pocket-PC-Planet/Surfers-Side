@@ -1,0 +1,16 @@
+/* PocketPC Planet App Manager 
+PocketPC Planet Team, 2020 - Do not replicate this site  */
+body {
+font-family: Courier New, Courier, monospace;
+background-color: black;
+color: #1ed44e;
+}
+
+a {
+color: #1ed44e;
+font-weight: bold;
+}
+
+p {
+color: white;
+}
