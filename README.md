@@ -1,5 +1,5 @@
 # Surfers-Side (PPCP-AppManager) 
-The server-side component of PPCP-AppManager, built using simple PHP and MySQL.
+![Project Banner](https://i.imgur.com/jgTiswg.png) The server-side component of PPCP-AppManager, built using simple PHP and MySQL.
 Based off [JohnSpahr](https://github.com/JohnSpahr)'s code! 
 
 ### Resources
