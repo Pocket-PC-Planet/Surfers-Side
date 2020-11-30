@@ -170,14 +170,15 @@ function show_posts($posts, $parent_id = -1)
 				<br>
             </div>
             ';
+                        
+                    ob_clean(); //clear previously echoed text
+                    include('head.html');
+                    echo (strval($totalPosts) . ' total posts');
                 }
             }
         }
     }
 	
-	ob_clean(); //clear previously echoed text
-	include('head.html');
-	echo (strval($totalPosts) . ' total posts');
     return $html;
 }
 
