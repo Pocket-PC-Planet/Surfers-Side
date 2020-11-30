@@ -113,7 +113,7 @@ function show_posts($posts, $parent_id = -1)
                     ' . show_posts($posts, $post['id']) . '
                     </div>
                 </div>
-				<br>
+				<hr>
                 ';
                     }
                 }
@@ -167,7 +167,7 @@ function show_posts($posts, $parent_id = -1)
                 <div class="replies">
                 ' . show_posts($posts, $post['id']) . '
                 </div>
-				<br>
+				<hr>
             </div>
             ';
                         
