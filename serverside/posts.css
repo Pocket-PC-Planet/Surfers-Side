@@ -1,27 +1,34 @@
 body {
-background-color: black;
-color: white;
-font-family: Courier New, Courier, monospace;
-overflow-wrap: break-word;
-word-wrap: break-word;
--ms-word-break: break-all;
-word-break: break-all;
-word-break: break-word;
--ms-hyphens: auto;
--moz-hyphens: auto;
--webkit-hyphens: auto;
-hyphens: auto;
-padding: 5px;
+    background-color: black;
+    color: white;
+    font-family: Courier New, Courier, monospace;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -ms-word-break: break-all;
+    word-break: break-all;
+    word-break: break-word;
+    -ms-hyphens: auto;
+    -moz-hyphens: auto;
+    -webkit-hyphens: auto;
+    hyphens: auto;
 }
+
 b {
-color: #1ed44e;
+    color: #1ed44e;
 }
+
 a {
-color: #1ed44e;
+    color: #1ed44e;
 }
+
 a:visited {
-color: #1ed44e;
+    color: #1ed44e;
 }
+
 a:hover {
-color: green;
+    color: green;
+}
+
+hr {
+    margin: 2px;
 }
