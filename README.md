@@ -9,4 +9,4 @@ Based off [JohnSpahr](https://github.com/JohnSpahr)'s code!
 - [Forum Discussion](https://ppcplanet.org/forums/discussion/12/dev-project-modern-ppc-app-market)
 - [Discord Server](https://discord.gg/tHbx4qc)
 - [PPC Planet](https://ppcplanet.org/)
-
+- [Development Blog](https://ppcpappmanagedevblog.blogspot.com/)
