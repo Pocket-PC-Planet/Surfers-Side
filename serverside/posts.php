@@ -89,7 +89,7 @@ function show_posts($posts, $parent_id = -1)
                         }
 
 
-                        //remove https from download URL
+                        //remove https from download URL and add filename to end
                         $downloadURL = $post['url'];
                         $downloadURL = str_replace("https", "http", $downloadURL);
                         $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
@@ -146,7 +146,7 @@ function show_posts($posts, $parent_id = -1)
                         $serial = "n/a";
                     }
 
-                    //remove https from download URL
+                    //remove https from download URL and add filename to end
                     $downloadURL = $post['url'];
                     $downloadURL = str_replace("https", "http", $downloadURL);
                     $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
