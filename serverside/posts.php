@@ -92,7 +92,9 @@ function show_posts($posts, $parent_id = -1)
                         //remove https from download URL
                         $downloadURL = $post['url'];
                         $downloadURL = str_replace("https", "http", $downloadURL);
-                        $downloadURL = 'appmanager://' . $downloadURL;
+                        $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
+                        $name = str_replace(" ", "_", $name);
+                        $downloadURL = 'appmanager://' . $downloadURL . '#' . $name;
 
                         //remove https from source URL
                         $source = $post['source'];
@@ -147,7 +149,9 @@ function show_posts($posts, $parent_id = -1)
                     //remove https from download URL
                     $downloadURL = $post['url'];
                     $downloadURL = str_replace("https", "http", $downloadURL);
-                    $downloadURL = 'appmanager://' . $downloadURL;
+                    $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
+                    $name = str_replace(" ", "_", $name);
+                    $downloadURL = 'appmanager://' . $downloadURL . '#' . $name;
 
                     //remove https from source URL
                     $source = $post['source'];
