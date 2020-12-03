@@ -89,16 +89,12 @@ function show_posts($posts, $parent_id = -1)
                         }
 
 
-                        //remove https from download URL and add filename to end
+                        //remove https from download URL
                         $downloadURL = $post['url'];
                         $downloadURL = str_replace("https", "http", $downloadURL);
                         $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                         $name = str_replace(" ", "_", $name);
-                        $downloadURL = 'appmanager://' . $downloadURL . '#' . $name;
-
-                        //remove https from source URL
-                        $source = $post['source'];
-                        $source = str_replace("https", "http", $source);
+                        $downloadURL = $downloadURL . '#' . $name;
 
                         $html .= '
                 <div class="post">
@@ -108,7 +104,6 @@ function show_posts($posts, $parent_id = -1)
                 <img class="image" style="width: 256px; height: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>
                 <p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
-                <p class="content"><b>Original Source: </b> <a href =' . nl2br(htmlspecialchars($source, ENT_QUOTES)) . ' target="_blank">' . nl2br(htmlspecialchars($source, ENT_QUOTES)) . '</a></p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
                     
@@ -146,16 +141,12 @@ function show_posts($posts, $parent_id = -1)
                         $serial = "n/a";
                     }
 
-                    //remove https from download URL and add filename to end
+                    //remove https from download URL
                     $downloadURL = $post['url'];
                     $downloadURL = str_replace("https", "http", $downloadURL);
                     $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                     $name = str_replace(" ", "_", $name);
-                    $downloadURL = 'appmanager://' . $downloadURL . '#' . $name;
-
-                    //remove https from source URL
-                    $source = $post['source'];
-                    $source = str_replace("https", "http", $source);
+                    $downloadURL = $downloadURL . '#' . $name;
 
                     $html .= '
             <div class="post">
@@ -166,7 +157,6 @@ function show_posts($posts, $parent_id = -1)
                 <img class="image" style="width: 256px; height: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>
                 <p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
-                <p class="content"><b>Original Source: </b> <a href =' . nl2br(htmlspecialchars($source, ENT_QUOTES)) . ' target="_blank">' . nl2br(htmlspecialchars($source, ENT_QUOTES)) . '</a></p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
                 
