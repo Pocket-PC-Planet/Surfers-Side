@@ -98,20 +98,16 @@ function show_posts($posts, $parent_id = -1)
 
                         $html .= '
                 <div class="post">
-                    <div>
-                <h2 class="content"><b><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
+                <h2 class="content"><b>' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
                 <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>
                 <img class="image" style="width: 256px; height: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>
                 <p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
-                    
-                    <div class="replies">
-                    ' . show_posts($posts, $post['id']) . '
-                    </div>
-                </div>
+                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">Download</a></h3>
 				<hr>
+                </div>
                 ';
                     }
                 }
@@ -150,19 +146,14 @@ function show_posts($posts, $parent_id = -1)
 
                     $html .= '
             <div class="post">
-                <div>
-                </div>
-                <h2 class="content"><b><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
+                <h2 class="content"><b>' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
                 <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>
                 <img class="image" style="width: 256px; height: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>
                 <p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
-                
-                <div class="replies">
-                ' . show_posts($posts, $post['id']) . '
-                </div>
+                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">Download</a></h3>
 				<hr>
             </div>
             ';
