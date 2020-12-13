@@ -41,23 +41,21 @@ function show_posts($posts, $parent_id = -1)
     }
 
     $resultCount = 0;
-	$totalPosts = 0;
+    $totalPosts = 0;
 
 
     $query = strtolower($_GET['search_query']);
-    if ($_GET['q'] != "")
-    {
+    if ($_GET['q'] != "") {
         $query = strtolower($_GET['q']);
     }
-    
+
     $showImage = true;
-    if (strpos($query, "$"))
-    {
+    if (strpos($query, "$")) {
         //check if $ is in query, indicating that images must be hidden
         $showImage = false;
         $query = str_replace("$", "", $query);
     }
-    
+
     list($searchTxt, $type, $category) = explode('^', $query);
 
     if ($searchTxt == "") {
@@ -108,11 +106,10 @@ function show_posts($posts, $parent_id = -1)
                         $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                         $name = str_replace(" ", "_", $name);
                         $downloadURL = $downloadURL . '#' . $name;
-                        
+
                         $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>';
-                        
-                        if (!$showImage)
-                        {
+
+                        if (!$showImage) {
                             //hide images
                             $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
                         }
@@ -120,9 +117,9 @@ function show_posts($posts, $parent_id = -1)
                         $html .= '
                 <div class="post">
                 <h2 class="content"><b>' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
-                <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>'.
-                $image .
-                '<p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
+                <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>' .
+                            $image .
+                            '<p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
@@ -139,11 +136,11 @@ function show_posts($posts, $parent_id = -1)
             echo (strval($resultCount) . ' result(s) found for "query: ' . $searchTxt . " + type: " . $type . " + category: " . $category . '"'); //display number of results
         } else {
             //if not searching
-			
+
             //add each post to HTML variable
             if ($post['parent_id'] == $parent_id) {
                 if ($post['cab'] == 1 && $post['direct'] == 1) {
-					$totalPosts++;
+                    $totalPosts++;
                     //check if optional variables are not set
                     $screenshot = $post['screenshot'];
                     if ($screenshot == "") {
@@ -163,21 +160,20 @@ function show_posts($posts, $parent_id = -1)
                     $downloadURL = str_replace("https", "http", $downloadURL);
                     $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                     $name = str_replace(" ", "_", $name);
-                                        
+
                     $downloadURL = $downloadURL . '#' . $name;
                     $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>';
-                        
-                        if (!$showImage)
-                        {
-                            //hide images
-                            $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
-                        }
+
+                    if (!$showImage) {
+                        //hide images
+                        $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
+                    }
                     $html .= '
             <div class="post">
                 <h2 class="content"><b>' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
-                <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>'.
-                $image .
-                '<p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
+                <h3 style="color: white;" class="name"><b>By ' . htmlspecialchars($post['postauthor'], ENT_QUOTES) . '</b> - <span class="date">' . time_elapsed_string($post['submit_date']) . '</span></h3>' .
+                        $image .
+                        '<p class="content"><b>Description: </b>' . nl2br(htmlspecialchars($post['content'], ENT_QUOTES)) . '</p>
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
@@ -185,7 +181,7 @@ function show_posts($posts, $parent_id = -1)
 				<hr>
             </div>
             ';
-                        
+
                     ob_clean(); //clear previously echoed text
                     include('head.html');
                     echo (strval($totalPosts) . ' total posts');
@@ -193,7 +189,7 @@ function show_posts($posts, $parent_id = -1)
             }
         }
     }
-	
+
     return $html;
 }
 
