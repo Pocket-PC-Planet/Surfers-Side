@@ -43,7 +43,13 @@ function show_posts($posts, $parent_id = -1)
     $resultCount = 0;
 	$totalPosts = 0;
 
-    $query = strtolower($_GET['q']);
+
+    $query = strtolower($_GET['search_query']);
+    if ($_GET['q'] != "")
+    {
+        $query = strtolower($_GET['q']);
+    }
+    
     $showImage = true;
     if (strpos($query, "$"))
     {
@@ -191,7 +197,7 @@ function show_posts($posts, $parent_id = -1)
     return $html;
 }
 
-if (isset($_GET['q'])) {
+if (isset($_GET['q']) || isset($_GET['search_query'])) {
     // Get all posts by the Page ID ordered by the submit date
     $stmt = $pdo->prepare('SELECT * FROM posts WHERE page_id = ? ORDER BY submit_date DESC');
     $stmt->execute([1]);
