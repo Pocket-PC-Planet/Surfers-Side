@@ -105,9 +105,9 @@ function show_posts($posts, $parent_id = -1)
                         $downloadURL = str_replace("https", "http", $downloadURL);
                         $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                         $name = str_replace(" ", "_", $name);
-                        $downloadURL = $downloadURL . '#' . $name;
+                        $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
 
-                        $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>';
+                        $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Failed to load screenshot"/>';
 
                         if (!$showImage) {
                             //hide images
@@ -123,7 +123,7 @@ function show_posts($posts, $parent_id = -1)
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
-                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">Download</a></h3>
+                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . '>Download</a></h3>
 				<hr>
                 </div>
                 ';
@@ -161,8 +161,8 @@ function show_posts($posts, $parent_id = -1)
                     $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                     $name = str_replace(" ", "_", $name);
 
-                    $downloadURL = $downloadURL . '#' . $name;
-                    $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="No Screenshot"/>';
+                    $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
+                    $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Failed to load screenshot"/>';
 
                     if (!$showImage) {
                         //hide images
@@ -177,7 +177,7 @@ function show_posts($posts, $parent_id = -1)
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
-                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . ' target="_blank">Download</a></h3>
+                <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . '>Download</a></h3>
 				<hr>
             </div>
             ';
