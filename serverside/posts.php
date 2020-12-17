@@ -1,6 +1,7 @@
 <?php
 include('head.html');
 include('mysqlconnect.php');
+
 error_reporting(E_ALL);
 try {
     $pdo = new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
@@ -8,6 +9,8 @@ try {
     // If there is an error with the connection, stop the script and display the error
     exit('Failed to connect to database!');
 }
+
+
 
 // Below function will convert datetime to time elapsed string
 function time_elapsed_string($datetime, $full = false)
@@ -111,7 +114,10 @@ function show_posts($posts, $parent_id = -1)
 
                         if (!$showImage) {
                             //hide images
-                            $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
+                            if ($screenshot != "http://appmanager.ppcplanet.org/images/noscreenshot.png")
+                            {
+                                $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
+                            }
                         }
 
                         $html .= '
@@ -166,7 +172,10 @@ function show_posts($posts, $parent_id = -1)
 
                     if (!$showImage) {
                         //hide images
-                        $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
+                        if ($screenshot != "http://appmanager.ppcplanet.org/images/noscreenshot.png")
+                        {
+                            $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
+                        }
                     }
                     $html .= '
             <div class="post">
@@ -181,10 +190,10 @@ function show_posts($posts, $parent_id = -1)
 				<hr>
             </div>
             ';
-
+            
                     ob_clean(); //clear previously echoed text
                     include('head.html');
-                    echo (strval($totalPosts) . ' total posts');
+                    echo (strval($totalPosts). ' total posts');
                 }
             }
         }
@@ -205,10 +214,14 @@ if (isset($_GET['q']) || isset($_GET['search_query'])) {
 } else {
     exit('No search query specified!');
 }
+
 ?>
 
-<div class="post_header">
-    <span style="color: white;" class="total"><?= $posts_info['total_posts'] ?> total post(s)</span>
-</div>
+ 
+<p></p><div class="post_header">
+    <span style="color: white;" class="total"><?= $posts_info['total_posts'] ?> total post(s) - </span>
+</p></div>
 
 <?= show_posts($posts) ?>
+
+</html>
