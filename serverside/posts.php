@@ -86,7 +86,7 @@ function show_posts($posts, $parent_id = -1)
                         //check if optional variables are not set
                         $screenshot = $post['screenshot'];
                         if ($screenshot == "") {
-                            $screenshot = "http://appmanager.ppcplanet.org/images/noscreenshot.png";
+                            $screenshot = "http://surfers-side.ppcplanet.org/img/noscreenshot.png";
                         } else {
                             //remove https from screenshot
                             $screenshot = str_replace("https", "http", $screenshot);
@@ -114,7 +114,7 @@ function show_posts($posts, $parent_id = -1)
 
                         if (!$showImage) {
                             //hide images
-                            if ($screenshot != "http://appmanager.ppcplanet.org/images/noscreenshot.png")
+                            if ($screenshot != "http://surfers-side.ppcplanet.org/img/noscreenshot.png")
                             {
                                 $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
                             }
@@ -150,7 +150,7 @@ function show_posts($posts, $parent_id = -1)
                     //check if optional variables are not set
                     $screenshot = $post['screenshot'];
                     if ($screenshot == "") {
-                        $screenshot = "http://appmanager.ppcplanet.org/images/noscreenshot.png";
+                        $screenshot = "http://surfers-side.ppcplanet.org/img/noscreenshot.png";
                     } else {
                         //remove https from screenshot URL
                         $screenshot = str_replace("https", "http", $screenshot);
@@ -172,7 +172,7 @@ function show_posts($posts, $parent_id = -1)
 
                     if (!$showImage) {
                         //hide images
-                        if ($screenshot != "http://appmanager.ppcplanet.org/images/noscreenshot.png")
+                        if ($screenshot != "http://surfers-side.ppcplanet.org/img/noscreenshot.png")
                         {
                             $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
                         }
