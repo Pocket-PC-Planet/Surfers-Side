@@ -1,5 +1,5 @@
-/* PocketPC Planet App Manager 
-PocketPC Planet Team, 2020 - Do not replicate this site  */
+/* Pocket PC Planet App Manager 
+Pocket PC Planet Team, 2020 - Do not replicate this site  */
 body {
 font-family: Courier New, Courier, monospace;
 background-color: black;
@@ -11,6 +11,37 @@ color: #1ed44e;
 font-weight: bold;
 }
 
+a:hover {
+    color: green;
+}
+
 p {
 color: white;
 }
+
+ul {
+    list-style-type: none;
+    overflow: hidden;
+}
+
+nav ul {
+    padding: 0;
+    font-size: 1.03em;
+    padding-bottom: 7px;
+    margin: 0;
+}
+
+nav li {
+    padding-right: 10px;
+    display: inline;
+    white-space: nowrap; /* This setting prevents that wrapping issue on mobile. */
+}
+
+.logo {
+    font-size: 2em;
+    padding: 10px;
+    padding-left: 0;
+    margin: 0;
+    text-decoration: none;
+}
+
