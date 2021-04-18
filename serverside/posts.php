@@ -109,7 +109,7 @@ function show_posts($posts, $parent_id = -1)
                         $name = str_replace(" ", "_", $name);
                         $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
 
-                        $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Failed to load screenshot"/>';
+                        $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Screenshot"/>';
 
                         if (!$showImage) {
                             //hide images
@@ -167,7 +167,7 @@ function show_posts($posts, $parent_id = -1)
                     $name = str_replace(" ", "_", $name);
 
                     $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
-                    $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Failed to load screenshot"/>';
+                    $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Screenshot"/>';
 
                     if (!$showImage) {
                         //hide images
