@@ -19,6 +19,9 @@ b {
 
 a {
     color: #1ed44e;
+    font-size: 1.12em;
+    text-decoration: none;
+    border-bottom: solid 2px;
 }
 
 a:visited {
