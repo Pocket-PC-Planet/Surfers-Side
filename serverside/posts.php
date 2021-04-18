@@ -2,7 +2,6 @@
 include('head.html');
 include('mysqlconnect.php');
 
-error_reporting(E_ALL);
 try {
     $pdo = new PDO('mysql:host=' . $DATABASE_HOST . ';dbname=' . $DATABASE_NAME . ';charset=utf8', $DATABASE_USER, $DATABASE_PASS);
 } catch (PDOException $exception) {
