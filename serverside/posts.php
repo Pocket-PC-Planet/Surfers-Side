@@ -107,7 +107,6 @@ function show_posts($posts, $parent_id = -1)
                         $downloadURL = str_replace("https", "http", $downloadURL);
                         $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                         $name = str_replace(" ", "_", $name);
-                        $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
 
                         $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Screenshot"/>';
 
@@ -166,7 +165,6 @@ function show_posts($posts, $parent_id = -1)
                     $name = nl2br(htmlspecialchars($post['name'], ENT_QUOTES));
                     $name = str_replace(" ", "_", $name);
 
-                    $downloadURL = $downloadURL . '#' . $name. '#'. $post['id'];
                     $image = '<img class="image" style="width: 256px; overflow: hidden; object-fit: cover;" src=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' alt="Screenshot"/>';
 
                     if (!$showImage) {
