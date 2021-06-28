@@ -9,8 +9,6 @@ try {
     exit('Failed to connect to database!');
 }
 
-
-
 // Below function will convert datetime to time elapsed string
 function time_elapsed_string($datetime, $full = false)
 {
