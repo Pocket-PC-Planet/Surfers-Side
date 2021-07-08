@@ -1,5 +1,5 @@
 /* Pocket PC Planet App Manager 
-Pocket PC Planet Team, 2020 - Do not replicate this site  */
+Pocket PC Planet Team, 2021 - Do not replicate this site  */
 body {
 font-family: Courier New, Courier, monospace;
 background-color: black;
@@ -45,3 +45,8 @@ nav li {
     text-decoration: none;
 }
 
+.logo img {
+    width: 22px;
+    height: 22px;
+    margin-right: 8px;
+}
