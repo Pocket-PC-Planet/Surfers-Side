@@ -115,6 +115,11 @@ function show_posts($posts, $parent_id = -1)
                                 $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
                             }
                         }
+            
+                        $hires = $post['hires'];
+                        if ($hires == "") {
+                            $hires = "n/a";
+                        }
 
                         $html .= '
                 <div class="post">
@@ -125,6 +130,7 @@ function show_posts($posts, $parent_id = -1)
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
+                <p class="content"><b>HiRes Displays (VGA): </b>' . nl2br(htmlspecialchars($hires, ENT_QUOTES)) . ' </p>
                 <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . '>Download</a></h3>
 				<hr>
                 </div>
@@ -172,6 +178,12 @@ function show_posts($posts, $parent_id = -1)
                             $image = '<p class="content"><b><a href=' . nl2br(htmlspecialchars($screenshot, ENT_QUOTES)) . ' >Screenshot</a></b></p>';
                         }
                     }
+            
+                    $hires = $post['hires'];
+                    if ($hires == "") {
+                        $hires = "n/a";
+                    }
+                
                     $html .= '
             <div class="post">
                 <h2 class="content"><b>' . nl2br(htmlspecialchars($post['name'], ENT_QUOTES)) . '</a></b></h2>
@@ -181,6 +193,7 @@ function show_posts($posts, $parent_id = -1)
                 <p class="content"><b>Serial: </b>' . nl2br(htmlspecialchars($serial, ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Type: </b>' . nl2br(htmlspecialchars($post['type'], ENT_QUOTES)) . ' </p>
                 <p class="content"><b>Category: </b>' . nl2br(htmlspecialchars($post['category'], ENT_QUOTES)) . ' </p>
+                <p class="content"><b>HiRes Displays (VGA): </b>' . nl2br(htmlspecialchars($hires, ENT_QUOTES)) . ' </p>
                 <h3><a href=' . nl2br(htmlspecialchars($downloadURL, ENT_QUOTES)) . '>Download</a></h3>
 				<hr>
             </div>
