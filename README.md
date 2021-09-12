@@ -1,4 +1,4 @@
-# Surfers-Side (PPCP-AppManager)
+# Surfers-Side (PPCP-AppCatalog)
 The server-side component of PPCP-AppManager, built using simple PHP and MySQL.
 Based off [JohnSpahr](https://github.com/JohnSpahr)'s code! 
 
